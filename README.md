@@ -8,4 +8,8 @@ Example: If your folder-name is projectfolder, and your prefix of choice is nas-
 There are some limitations. Folder-name and passwords can't contain special characters, spaces or mutated vowels.
 
 After replacing all of this, throw it in gcc and your good to go.
-GCC-Example: gcc -o unlockfolders unlockfolders.c
+
+GCC-Example: 
+```bash
+gcc -o unlockfolders unlockfolders.c
+```
