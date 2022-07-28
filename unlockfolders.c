@@ -31,6 +31,8 @@ int main() {
     char *pathToPasswordDB = "\\\\network\\example\\path\\passwordsafe.kdbx";
     char *keepassPrefix = "prefix-in-keepass-title";
 
+    int prefixLength = strlen(keepassPrefix);
+
     FILE *fp;
     char databasePassword[128], nasIpAdress[16], nasPort[6], nasUsername[36], nasPassword[36], temp[100], titles[10000], passwords[10000];
     char listTitles[100][10000], listPassword[100][10000];
@@ -53,7 +55,7 @@ int main() {
     for(int i = 0; titles[i] != '\0'; i++) {
         if(titles[i] == '\n') {
             i++;
-            strncpy(listTitles[j], titles+h+7, i-h-7);
+            strncpy(listTitles[j], titles+h+prefixLength, i-h-prefixLength);
             listTitles[j][strcspn(listTitles[j], "\n")] = 0;
             h = i;
             j++;
